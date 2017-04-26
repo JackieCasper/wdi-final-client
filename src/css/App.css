@@ -1,0 +1,628 @@
+/* RED: c21b1f */
+/*BLACK: 222526*/
+
+*{
+  font-family: 'Quicksand', sans-serif;
+}
+
+body{
+  background-color: #54595b;
+}
+
+.landing{
+  height: 100vh;
+  width: 100%;
+  background-image: url(/background.jpg);
+  background-size: cover;
+  background-color: #aaa;
+  background-blend-mode: multiply;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  -ms-align-items: center;
+  align-items: center;
+}
+.landing-contents, .user-form-container{
+  background-color: rgba(200,200,200,.8);
+  padding: 10px;
+  width: 100%;
+  max-width: 600px;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100vh;
+  max-height: 500px;
+  box-shadow: 0 0 60px rgba(0,0,0,.8);
+  text-align: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+}
+h1{
+  font-weight: 400;
+  font-size: 3em;
+  margin-top: 0;
+}
+
+.landing-options{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 50%;
+  margin: 0 auto;
+  min-width: 280px;
+}
+
+.landing-contents a{
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background-color: #222526;
+  margin: 10px;
+  padding: 10px;
+  color:white;
+  text-decoration: none;
+}
+
+.landing-options a:hover{
+  background-color: #c21b1f;
+  cursor: pointer;
+}
+
+
+
+.modal{
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0,0,0,.6);
+  top: 0;
+  left: 0;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -ms-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+}
+
+.modal.hidden{
+  display: none;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal_content{
+  background-color:ghostwhite;
+  padding: 20px;
+  display: -webkit-flex;
+  display: -ms-flex;
+  position: relative;
+  box-shadow: 0 0 50px rgba(0,0,0, .4);
+  min-height: 300px;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -ms-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 600px;
+}
+
+.close-modal-button{
+  width: 25px;
+  height: 25px;
+  font-size: 1em;
+  background-color: #c21b1f;
+  border: 0px solid transparent;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: white;
+}
+.close-modal-button:hover{
+  cursor: pointer;
+}
+
+form{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+}
+
+h2{
+  margin: 0 auto 10px;
+}
+
+.submit-button{
+  padding: 10px;
+  width: 100%;
+  background-color: #222526;
+  color: white;
+  font-size: 1em;
+  border: 0px solid transparent;
+}
+.submit-button:hover{
+  cursor: pointer;
+  background-color: #c21b1f;
+}
+
+input{
+  padding: 5px;
+  font-size: 1em;
+}
+
+.form-section{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.form-input{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  flex: 1;
+}
+.hand-container{
+  position: fixed;
+  bottom: 80px;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  width: 100%;
+  -ms-align-items: center;
+  align-items: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.Hand {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 0 0 -30px;
+}
+.card-container {
+  margin: 0 -10px -40px 0;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  min-width: 50px;
+
+}
+img.card {
+  width: 100%;
+  box-shadow: -5px 5px 15px rgba(0,0,0,.4);
+  max-width: 80px;
+
+}
+
+.user-form{
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.user-form h2{
+  color: #222526;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.user-form a{
+  color: #c21b1f;
+}
+
+.user-form ul{
+  padding: 0;
+  margin: 5px;
+}
+
+.Games{
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.new-game-button{
+  padding: 10px;
+  color:white;
+  border: 0px solid transparent;
+  font-size: 1em;
+  background-color: #222526;
+  width: 100%;
+}
+.new-game-button:hover{
+  background-color: #c21b1f;
+  cursor: pointer;
+}
+
+.GameList{
+  padding: 10px;
+  background-color: ghostwhite;
+  min-height: 80vh;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  list-style: none;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.game-list-item{
+  margin: 0;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  -o-justify-content: space-between;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #999;
+  -ms-align-items: center;
+  align-items: center;
+
+}
+.GameList a{
+  text-decoration: none;
+  color: #222526;
+
+}
+.GameList a:hover{
+  background-color: #222526;
+  color: white;
+}
+.game-list-item p{
+  margin: 0;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+.GameList>.game-list-item:first-of-type{
+  border-bottom: 2px solid #999;
+  font-weight: bold;
+}
+
+.game-list-item p:first-of-type{
+  text-align: left;
+}
+.game-list-item p:last-of-type{
+  text-align: right;
+}
+.ReadyScreen{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  -ms-align-items: center;
+  align-items: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.ready-list{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  background-color: ghostwhite;
+  list-style: none;
+  width: 100%;
+  max-width: 500px;
+  padding: 0px;
+  box-shadow: 0 0 40px rgba(0,0,0,.3);
+}
+.ready-list li{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  -o-justify-content: space-between;
+  justify-content: space-between;
+  -ms-align-items: center;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.ReadyScreen button{
+  padding: 10px;
+  color:white;
+  border: 0px solid transparent;
+  font-size: 1em;
+  background-color: #222526;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 0 20px rgba(0,0,0,.3);
+}
+.ReadyScreen button:hover{
+  background-color: #c21b1f;
+  cursor: pointer;
+}
+.Play{
+  text-align: center;
+  padding: 10px;
+}
+
+.Play h2{
+  font-size: 3em;
+  font-weight: 400;
+}
+
+.logout{
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 8px;
+  background-color: #222526;
+  color:white;
+  border: 0px solid transparent;
+  z-index: 100;
+  background-image: url(/logout.svg);
+  background-size: auto 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 40px;
+  height: 40px;
+  z-index: 2000;
+}
+.logout:hover{
+  background-color: #c21b1f;
+  cursor: pointer;
+}
+
+.turn-controls{
+  width: 300px;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  margin-bottom: 40px;
+  margin-left: -20px;
+}
+.turn-controls button{
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 10px;
+  font-size: 1em;
+  margin-bottom: 10px;
+  border: 0px solid transparent;
+  color: white;
+  margin: 10px 5px;
+}
+.pass-button{
+  background-color: #222526;
+  cursor: pointer;
+}
+.play-button{
+  background-color: #222526;
+  opacity: .5;
+}
+.play-button.can-play{
+  opacity: 1;
+  cursor: pointer;
+}
+
+.pass-button:hover, .play-button.can-play:hover{
+  background-color: #c21b1f;
+}
+.deck{
+  height: 30vh;
+  width: 100%;
+  max-width: 800px;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  margin: 50px auto;
+  padding-left: 20px;
+  -ms-align-items: center;
+  align-items: center;
+}
+.deck-card{
+  margin-left: -40px;
+  box-shadow: -5px 5px 15px rgba(0,0,0,.4);
+  height: 100%;
+}
+
+.players{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  list-style: none;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  -o-justify-content: space-between;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h2{
+  color: white;
+}
+
+.player{
+  color:white;
+  background-color: #222526;
+  margin: 5px 0;
+  padding: 5px 10px;
+  text-align: center;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  width: 20vw;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  -o-justify-content: space-between;
+  justify-content: space-between;
+  -ms-align-items: center;
+  align-items: center;
+}
+
+.player.is-turn{
+  background-color: #c21b1f;
+}
+
+.player h3, .player p{
+  margin: 5px 0;
+  font-weight: 400;
+}
+.player h3{
+  font-size: 1em;
+}
+.player p{
+  font-size: .8em;
+}
+
+.score-container{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  -ms-align-items: center;
+  align-items: center;
+  background-color: rgba(0,0,0,.6);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.score-content{
+  background-color: ghostwhite;
+  padding: 10px;
+  width: 100%;
+  max-width: 600px;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100vh;
+  max-height: 600px;
+  box-shadow: 0 0 60px rgba(0,0,0,.8);
+  text-align: center;
+  -ms-align-items: center;
+  align-items: center;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  -o-justify-content: space-between;
+  justify-content: space-between;
+
+}
+
+.NewGame h2{
+  color: #222526;
+  text-align: center;
+}
+
+.score-content h2{
+  color:#c21b1f;
+  margin-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #c21b1f;
+}
+
+ol{
+  padding: 0;
+  width: 80%;
+  margin: 0 auto;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-align-items: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+ol li{
+  font-size: 1.5em;
+  margin-bottom: 15px;
+}
