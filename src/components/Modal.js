@@ -3,7 +3,6 @@ import '../css/App.css';
 import { connect } from 'react-redux';
 import { closeModal } from '../actions';
 import { bindActionCreators } from 'redux';
-import NewGame from './NewGame';
 
 class Modal extends Component {
   render(){
@@ -12,7 +11,7 @@ class Modal extends Component {
       <div className={`modal${hidden}`}>
         <div className='modal_content'>
           <button className='close-modal-button' onClick={()=>{this.props.closeModal()}}>X</button>
-          <NewGame />
+          {this.props.modal.content}
         </div>
       </div>
     )

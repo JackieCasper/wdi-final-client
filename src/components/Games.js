@@ -8,7 +8,6 @@ import GameList from './GameList';
 import NewGame from './NewGame';
 import { Link } from 'react-router-dom';
 import Logout from './Logout';
-import Modal from './Modal';
 
 
 class Games extends Component {
@@ -42,7 +41,6 @@ class Games extends Component {
     if(this.props.current_user){
       return(
         <div className='Games'>
-          <Modal />
           <Logout history={this.props.history} />
           <GameList />
           <button className='new-game-button' onClick={()=>{this.openNewGame()}}>New Game</button>

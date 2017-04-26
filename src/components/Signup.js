@@ -22,7 +22,7 @@ class Signup extends Component {
     Auth
       .emailSignUp(InputHelper.requestInputs(this))
       .then(data => {
-        this.props.history.push('/games');
+        location.href = '/games';
       })
       .catch(err => {
         console.log(err);

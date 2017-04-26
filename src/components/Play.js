@@ -38,7 +38,7 @@ class Play extends Component {
               const methods = {
                 'disconnect': (error)=>{
                   console.log('DISCONNECT');
-                  this.props.history.push('/');
+                  location.href = '/games';
                 },
                 'game': (game)=>{
                   self.props.updateGame(game)
@@ -78,7 +78,7 @@ class Play extends Component {
             },
             'disconnect': (error)=>{
               console.log('DISCONNECT');
-              this.props.history.push('/games');
+              location.href = '/games';
             },
             'winners':(winners)=>{
               self.props.updateWinners(winners)
@@ -117,7 +117,7 @@ class Play extends Component {
     }
     setTimeout(()=>{
       if (!this.props.game){
-        this.props.history.push('/games')
+        location.href = '/games'
       }
     }, 10000)
     return(

@@ -15,7 +15,7 @@ class Logout extends Component{
         this.props.setUser(null);
         this.props.removeSubscriptions();
         console.log(this.props);
-        this.props.history.push('/');
+        location.href = '/';
       })
       .fail(err => {
         console.log(err);

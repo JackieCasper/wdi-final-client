@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import '../css/App.css';
 import Auth from '../helpers/Auth';
 import {connect} from 'react-redux';
-import { updateInputs, setUser } from '../actions';
+import { updateInputs } from '../actions';
 import { bindActionCreators } from 'redux';
 import LoadScreen from './LoadScreen';
 import InputHelper from '../helpers/inputs';
@@ -23,8 +23,7 @@ class Login extends Component {
     Auth
       .emailSignIn(InputHelper.requestInputs(this))
       .then(data => {
-        this.props.setUser(data);
-        this.props.history.push('/games');
+        location.href = '/games';
       })
       .catch(err => {
         console.log(err);
@@ -74,7 +73,6 @@ function mapDispatchToProps(dispatch){
 
 function mapStateToProps(state){
   return {
-    setUser: setUser,
     inputs: state.inputs
   }
 }
