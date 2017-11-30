@@ -9,6 +9,8 @@ import DeckReducer from './deck_reducer';
 import PlayerReducer from './player_reducer';
 import PlayersReducer from './players_reducer';
 import WinnersReducer from './winners_reducer';
+import ChatReducer from './chat_reducer';
+import CableReducer from './cable_reducer';
 
 
 const rootReducer = combineReducers({
@@ -21,7 +23,9 @@ const rootReducer = combineReducers({
   deck: DeckReducer,
   player: PlayerReducer,
   players: PlayersReducer,
-  winners: WinnersReducer
+  winners: WinnersReducer,
+  chat: ChatReducer,
+  cable: CableReducer
 });
 
 export default rootReducer;

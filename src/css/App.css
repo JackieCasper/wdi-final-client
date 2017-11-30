@@ -238,7 +238,7 @@ input{
   min-width: 50px;
 
 }
-img.card {
+.card {
   width: 100%;
   box-shadow: -5px 5px 15px rgba(0,0,0,.4);
   max-width: 80px;
@@ -625,4 +625,64 @@ ol{
 ol li{
   font-size: 1.5em;
   margin-bottom: 15px;
+}
+
+button.chat-button {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 40px;
+    width: 40px;
+    border: 0px solid transparent;
+    z-index: 55555555;
+    background-color: #222526;
+    color: white;
+}
+
+ul.messages {
+    height: 50vh;
+    padding: 0 10px 5px;
+    list-style: none;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    margin: 0;
+}
+
+.Chat {
+    position: absolute;
+    z-index: 66666666;
+    width: 30vw;
+    background-color: ghostwhite;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+}
+.Chat.hidden {
+    overflow: hidden;
+    opacity: 0;
+    z-index: -1;
+    width: 0;
+}
+
+button.chat-button.unread{
+  background-color: #c21b1f;
+}
+
+li.message {
+  text-align: left;
+  padding: 4px 0;
+}
+
+.message > p {
+  margin: 2px 0;
+}
+p.message-user {
+    font-weight: bold;
+    color: #c21b1f;
+    font-size: 1.2em;
+}
+p.message-content {
+
 }

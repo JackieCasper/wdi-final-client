@@ -5,13 +5,20 @@ import { connect } from 'react-redux';
 import Card from './Card';
 import TurnControls from './TurnControls';
 import Deck from './Deck';
+import Images from '../helpers/images';
 
 class Hand extends Component {
   renderHand(){
     console.log(this.props.player);
     return this.props.player.hand.map((card, i)=>{
+      let cardType = card.playable ? 'playable' : 'notPlayable';
+      if (this.props.player.buildingTurn.find((c)=>{
+        return card.id === c.id;
+      })){
+        cardType = 'selected';
+      }
       return(
-        <Card key={i} card={card}></Card>
+        <Card key={i} card={card} cardImg={Images[cardType][card.suit + card.value]}></Card>
       )
     })
   }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Auth from '../helpers/Auth';
 import { connect } from 'react-redux';
-import { setUser, updateModalContents, openModal } from '../actions';
+import { setUser, updateModalContents, openModal, removeSubscriptions } from '../actions';
 import { bindActionCreators } from 'redux';
 import LoadScreen from './LoadScreen';
 import GameList from './GameList';
@@ -26,6 +26,12 @@ class Games extends Component {
           console.log(error);
           this.props.history.push('/login');
         });
+    }
+    if(this.props.cable){
+      this.props.cable.subscriptions['subscriptions'].forEach(subscription => {
+        this.props.cable.subscriptions.remove(subscription);
+      })
+      this.props.removeSubscriptions();
     }
   }
 
@@ -59,12 +65,14 @@ class Games extends Component {
 function mapDispatchToProps(dispatch){
   return bindActionCreators({setUser: setUser,
     openModal: openModal,
-    updateModalContents: updateModalContents}, dispatch);
+    updateModalContents: updateModalContents,
+    removeSubscriptions: removeSubscriptions}, dispatch);
 }
 
 function mapStateToProps(state){
   return {
-    current_user: state.current_user
+    current_user: state.current_user,
+    cable: state.cable
   }
 }
 

@@ -203,3 +203,42 @@ export function updateWinners(winners){
     payload: winners
   }
 }
+
+export const UPDATE_MESSAGES = 'UPDATE_MESSAGES';
+export function setMessages(messages){
+  console.log(messages);
+  return{
+    type: UPDATE_MESSAGES,
+    payload: messages
+  }
+}
+
+export const ADD_MESSAGE = 'ADD_MESSAGE'
+export function addMessage(message){
+  return{
+    type: ADD_MESSAGE,
+    payload: message
+  }
+}
+
+export const UPDATE_CHAT_OPEN  = 'UPDATE_CHAT_OPEN'
+export function openChat(){
+  return{
+    type: UPDATE_CHAT_OPEN,
+    payload: true
+  }
+}
+export function closeChat(){
+  return{
+    type: UPDATE_CHAT_OPEN,
+    payload: false
+  }
+}
+
+export const UPDATE_CABLE = 'UPDATE_CABLE';
+export function updateCable(cable){
+  return{
+    type: UPDATE_CABLE,
+    payload: cable
+  }
+}

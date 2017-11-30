@@ -9,6 +9,12 @@ class Logout extends Component{
 
   logout(){
     const self = this;
+    if(this.props.cable){
+      this.props.cable.subscriptions['subscriptions'].forEach(subscription => {
+        this.props.cable.subscriptions.remove(subscription);
+      })
+    }
+    this.props.removeSubscriptions();
     Auth
       .signOut()
       .then(data => {
@@ -37,7 +43,8 @@ function mapDispatchToProps(dispatch){
 function mapStateToProps(state){
   return {
     subscriptions: state.subscriptions,
-    current_user: state.current_user
+    current_user: state.current_user,
+    cable: state.cable
   }
 }
 

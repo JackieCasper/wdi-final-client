@@ -34,7 +34,6 @@ class Login extends Component {
     if(this.props.inputs){
       return(
         <div className='landing'>
-
             <div className='user-form-container'>
               <form className='user-form' onSubmit={(e)=>{this.login(e)}}>
                 <h2>Login</h2>

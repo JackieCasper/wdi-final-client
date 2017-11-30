@@ -5,12 +5,14 @@ import Login from './components/Login';
 import SignUp from './components/Signup';
 import Landing from './components/Landing';
 import Play from './components/Play';
+import Modal from './components/Modal';
 
 
 
 export default (
   <BrowserRouter>
     <div className="page">
+      <Modal />
       <div className='container'>
         <Route exact path='/' component={Landing} />
         <Route path='/games' component={Games} />
